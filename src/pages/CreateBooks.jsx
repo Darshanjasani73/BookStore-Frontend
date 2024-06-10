@@ -66,7 +66,7 @@ const CreateBooks = () => {
   };
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
+axios.defaults.withCredentials = true;
   const handleSaveBook = () => {
     const validationError = validateYear(publishYear) || validateText(title, 'Title') || validateText(author, 'Author');
     if (validationError) {
@@ -79,10 +79,10 @@ const CreateBooks = () => {
     formData.append('author', author);
     formData.append('publishYear', publishYear);
     formData.append('thumbnail', thumbnail);
-
+   
     setLoading(true);
     axios
-      .post('book-store-backend-kappa-coral.vercel.app/books', formData, {
+      .post('https://book-store-backend-kappa-coral.vercel.app/books', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
