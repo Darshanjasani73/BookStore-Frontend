@@ -9,11 +9,10 @@ const ShowBook = () => {
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { id } = useParams();
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`)
+      .get(`https://bookstore-backend-qjzq.onrender.com/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
