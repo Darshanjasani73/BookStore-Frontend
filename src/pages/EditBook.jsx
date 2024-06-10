@@ -20,11 +20,11 @@ const EditBook = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  axios.defaults.withCredentials = true;
+ 
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`)
+    axios.get(`https://bookstore-backend-qjzq.onrender.com/books/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
@@ -106,7 +106,7 @@ const EditBook = () => {
 
     setLoading(true);
     axios
-      .put(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`, formData, {
+      .put(`https://bookstore-backend-qjzq.onrender.com/books/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
