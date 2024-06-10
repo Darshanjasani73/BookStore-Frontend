@@ -10,7 +10,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     setLoading(true);
     axios
