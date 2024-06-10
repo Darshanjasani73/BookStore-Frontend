@@ -104,7 +104,7 @@ const EditBook = () => {
 
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, formData, {
+      .put(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
