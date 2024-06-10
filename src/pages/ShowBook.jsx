@@ -13,7 +13,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${backendUrl}/books/${id}`)
+      .get(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
