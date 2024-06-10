@@ -11,6 +11,8 @@ const DeleteBook = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  axios.defaults.withCredentials = true;
+
   const handleDeleteBook = () => {
     setLoading(true);
     axios
