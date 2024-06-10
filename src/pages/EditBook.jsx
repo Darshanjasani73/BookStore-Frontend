@@ -20,9 +20,11 @@ const EditBook = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  axios.defaults.withCredentials = true;
+
   useEffect(() => {
     setLoading(true);
-    axios.get(`${backendUrl}/books/${id}`)
+    axios.get(`https://book-store-backend-kappa-coral.vercel.app/books/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
