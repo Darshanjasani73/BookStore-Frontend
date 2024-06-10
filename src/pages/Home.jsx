@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${backendUrl}/books`)
+      .get('https://book-store-backend-kappa-coral.vercel.app/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
