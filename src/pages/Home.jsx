@@ -9,12 +9,10 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  axios.defaults.withCredentials = true;
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://book-store-backend-kappa-coral.vercel.app/books')
+      .get('https://bookstore-backend-qjzq.onrender.com/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
